@@ -1,6 +1,7 @@
 'use client';
 
-import { Autocomplete, TextField } from '@mui/material';
+import Autocomplete from '@mui/material/Autocomplete';
+import TextField from '@mui/material/TextField';
 
 export default function Combobox({
   options,

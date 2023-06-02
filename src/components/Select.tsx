@@ -1,6 +1,8 @@
 'use client';
 
-import { FormControl, InputLabel, MenuItem } from '@mui/material';
+import FormControl from '@mui/material/FormControl';
+import InputLabel from '@mui/material/InputLabel';
+import MenuItem from '@mui/material/MenuItem';
 import MSelect, { SelectChangeEvent } from '@mui/material/Select';
 
 export default function Select({

@@ -1,6 +1,6 @@
 'use client';
 
-import { Chip } from '@mui/material';
+import Chip from '@mui/material/Chip';
 import Image from 'next/image';
 import Link from 'next/link';
 

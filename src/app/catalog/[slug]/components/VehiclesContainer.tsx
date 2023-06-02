@@ -1,6 +1,6 @@
 'use client';
 
-import { Alert } from '@mui/material';
+import Alert from '@mui/material/Alert';
 import { useSearchParams } from 'next/navigation';
 import { useEffect } from 'react';
 import { useVehicleListing } from '../hooks/vehicleListing';

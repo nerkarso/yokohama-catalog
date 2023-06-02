@@ -1,4 +1,4 @@
-import { createTheme } from '@mui/material';
+import { createTheme } from '@mui/material/styles';
 import siteConfig from './site.config.mjs';
 
 const themeConfig = createTheme({

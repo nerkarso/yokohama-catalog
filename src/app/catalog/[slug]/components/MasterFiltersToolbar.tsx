@@ -3,7 +3,8 @@
 import Select from '@/components/Select';
 import { defaultCatalogParams } from '@/utils/defaultCatalogParam';
 import transformOptions from '@/utils/transformOptions';
-import { Button, SelectChangeEvent } from '@mui/material';
+import Button from '@mui/material/Button';
+import { SelectChangeEvent } from '@mui/material/Select';
 import { useQuery } from '@tanstack/react-query';
 import { useQueryParams } from 'use-query-params';
 import { getMasterFilters } from '../actions';
