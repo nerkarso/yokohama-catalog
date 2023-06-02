@@ -12,6 +12,9 @@ const themeConfig = createTheme({
     secondary: {
       main: siteConfig.colors.secondary[700],
     },
+    info: {
+      main: siteConfig.colors.primary[800],
+    },
   },
 });
 
