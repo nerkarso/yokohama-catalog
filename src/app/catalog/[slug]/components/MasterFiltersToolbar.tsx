@@ -3,7 +3,7 @@
 import Select from '@/components/Select';
 import { defaultCatalogParams } from '@/utils/defaultCatalogParam';
 import transformOptions from '@/utils/transformOptions';
-import { SelectChangeEvent } from '@mui/material';
+import { Button, SelectChangeEvent } from '@mui/material';
 import { useQuery } from '@tanstack/react-query';
 import { useQueryParams } from 'use-query-params';
 import { getMasterFilters } from '../actions';
@@ -17,6 +17,10 @@ export default function MasterFiltersToolbar() {
     setQuery({ [name]: value === '' ? undefined : value });
   };
 
+  const clearFilters = () => {
+    setQuery({ stock: query.stock }, 'replace');
+  };
+
   const { data, isLoading } = useQuery({
     queryKey: ['masterFilters'],
     queryFn: () => getMasterFilters(query.stock as string),
@@ -24,7 +28,7 @@ export default function MasterFiltersToolbar() {
   });
 
   return (
-    <div className="mt-6 grid grid-cols-[repeat(auto-fit,minmax(240px,1fr))] gap-2">
+    <div className="grid grid-cols-[repeat(auto-fit,minmax(130px,1fr))] gap-2 mt-6">
       {isLoading ? (
         <SkeletonSelect />
       ) : (
@@ -87,6 +91,11 @@ export default function MasterFiltersToolbar() {
           onChange={handleSelectChange}
         />
       )}
+      <div className="flex md:justify-end items-center">
+        <Button onClick={clearFilters} variant="outlined">
+          Clear
+        </Button>
+      </div>
     </div>
   );
 }

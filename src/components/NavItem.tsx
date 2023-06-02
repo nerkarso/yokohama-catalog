@@ -16,8 +16,8 @@ export default function NavItem({
     <Link
       href={navItem.url}
       className={clsx(
-        'text-primary-900 px-2 py-1 transition hover:bg-primary-50 rounded-md whitespace-nowrap font-medium',
-        isActive && 'bg-primary-100'
+        'text-base-500 px-2 py-1 transition hover:bg-base-100 rounded-md whitespace-nowrap font-medium',
+        isActive && '!text-primary-900'
       )}
     >
       {navItem.label}

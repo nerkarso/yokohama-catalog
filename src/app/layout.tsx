@@ -2,6 +2,7 @@ import './globals.css';
 
 import RootProviders from '@/components/RootProviders';
 import SiteHeader from '@/components/SiteHeader';
+import clsx from 'clsx';
 import { Work_Sans } from 'next/font/google';
 
 const fontFamily = Work_Sans({ subsets: ['latin'] });
@@ -15,7 +16,7 @@ export const metadata = {
 export default function RootLayout({ children }: Props) {
   return (
     <html lang="en">
-      <body className={`min-h-screen ${fontFamily.className}`}>
+      <body className={clsx('min-h-screen', fontFamily.className)}>
         <RootProviders>
           <SiteHeader />
           <main>{children}</main>
