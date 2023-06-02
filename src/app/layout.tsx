@@ -2,9 +2,9 @@ import './globals.css';
 
 import RootProviders from '@/components/RootProviders';
 import SiteHeader from '@/components/SiteHeader';
-import { Inter } from 'next/font/google';
+import { Work_Sans } from 'next/font/google';
 
-const inter = Inter({ subsets: ['latin'] });
+const fontFamily = Work_Sans({ subsets: ['latin'] });
 
 export const metadata = {
   title: 'Yokohama Catalog',
@@ -15,7 +15,7 @@ export const metadata = {
 export default function RootLayout({ children }: Props) {
   return (
     <html lang="en">
-      <body className={`min-h-screen ${inter.className}`}>
+      <body className={`min-h-screen ${fontFamily.className}`}>
         <RootProviders>
           <SiteHeader />
           <main>{children}</main>

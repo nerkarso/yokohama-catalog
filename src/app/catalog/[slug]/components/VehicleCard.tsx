@@ -25,7 +25,7 @@ export default function VehicleCard({ data }: { data: FilterResult }) {
       <div className="flex items-start flex-col gap-2 p-3 flex-1">
         {data.Year && <Chip label={data.Year} size="small" color="primary" />}
         {data.Make && (
-          <h4 className="text-sm sm:text-base">
+          <h4 className="text-sm sm:text-base font-medium">
             {data.Make} - {data.Brand}
           </h4>
         )}

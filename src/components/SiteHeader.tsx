@@ -33,7 +33,7 @@ export default function SiteHeader() {
             <Link
               href={navItem.url}
               key={navItem.label}
-              className="text-blue-900 px-2 py-1 transition hover:bg-primary-50 rounded-md whitespace-nowrap"
+              className="text-primary-900 px-2 py-1 transition hover:bg-primary-50 rounded-md whitespace-nowrap font-medium"
             >
               {navItem.label}
             </Link>
