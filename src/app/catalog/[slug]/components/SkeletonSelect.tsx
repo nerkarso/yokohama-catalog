@@ -4,12 +4,6 @@ import { Skeleton } from '@mui/material';
 
 export default function SkeletonSelect() {
   return (
-    <Skeleton
-      animation="wave"
-      variant="rounded"
-      width="100%"
-      sx={{ maxWidth: 240 }}
-      height={56}
-    />
+    <Skeleton animation="wave" variant="rounded" width="100%" height={56} />
   );
 }

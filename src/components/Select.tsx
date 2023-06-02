@@ -17,7 +17,7 @@ export default function Select({
   options: Array<{ label: string; value: any }>;
 }) {
   return (
-    <FormControl variant="filled" sx={{ maxWidth: 240 }} fullWidth>
+    <FormControl variant="filled" fullWidth>
       <InputLabel id={name}>{label}</InputLabel>
       <MSelect id={name} name={name} value={value} onChange={onChange}>
         <MenuItem value="">

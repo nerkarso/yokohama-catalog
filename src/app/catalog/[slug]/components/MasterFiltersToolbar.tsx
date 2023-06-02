@@ -24,7 +24,7 @@ export default function MasterFiltersToolbar() {
   });
 
   return (
-    <div className="mt-6 flex gap-2 flex-wrap">
+    <div className="mt-6 grid grid-cols-[repeat(auto-fit,minmax(240px,1fr))] gap-2">
       {isLoading ? (
         <SkeletonSelect />
       ) : (
