@@ -4,9 +4,9 @@ import { Alert } from '@mui/material';
 import { useSearchParams } from 'next/navigation';
 import { useEffect } from 'react';
 import { useVehicleListing } from '../hooks/vehicleListing';
-import VehicleGrid from './VehicleGrid';
+import VehiclesGrid from './VehiclesGrid';
 
-export default function VehicleListing() {
+export default function VehiclesContainer() {
   const searchParams = useSearchParams();
   const { data, isLoading, refetch } = useVehicleListing();
 
@@ -19,5 +19,5 @@ export default function VehicleListing() {
     return <Alert severity="info">No results found</Alert>;
   }
 
-  return <VehicleGrid data={data} isLoading={isLoading} />;
+  return <VehiclesGrid data={data} isLoading={isLoading} />;
 }

@@ -1,7 +1,7 @@
 import SkeletonVehicleCard from './SkeletonVehicleCard';
 import VehicleCard from './VehicleCard';
 
-export default function VehicleGrid({
+export default function VehiclesGrid({
   data = [],
   isLoading,
 }: {
