@@ -91,11 +91,15 @@ export default function MasterFiltersToolbar() {
           onChange={handleSelectChange}
         />
       )}
-      <div className="flex md:justify-end items-center">
-        <Button onClick={clearFilters} variant="outlined">
-          Clear
-        </Button>
-      </div>
+      {isLoading ? (
+        <SkeletonSelect />
+      ) : (
+        <div className="flex md:justify-end items-center">
+          <Button onClick={clearFilters} variant="outlined">
+            Clear
+          </Button>
+        </div>
+      )}
     </div>
   );
 }
