@@ -1,5 +1,6 @@
 'use client';
 
+import { Alert } from '@mui/material';
 import { useSearchParams } from 'next/navigation';
 import { useEffect } from 'react';
 import { useVehicleListing } from '../hooks/vehicleListing';
@@ -14,9 +15,9 @@ export default function VehicleListing() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [searchParams]);
 
-  if (isLoading) return null;
+  if (!isLoading && !data?.length) {
+    return <Alert severity="info">No results found</Alert>;
+  }
 
-  if (!data) return null;
-
-  return <VehicleGrid data={data} />;
+  return <VehicleGrid data={data} isLoading={isLoading} />;
 }

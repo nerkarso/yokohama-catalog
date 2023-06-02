@@ -7,6 +7,7 @@ import { SelectChangeEvent } from '@mui/material';
 import { useQuery } from '@tanstack/react-query';
 import { useQueryParams } from 'use-query-params';
 import { getMasterFilters } from '../actions';
+import SkeletonSelect from './SkeletonSelect';
 
 export default function MasterFiltersToolbar() {
   const [query, setQuery] = useQueryParams(defaultCatalogParams);
@@ -22,56 +23,70 @@ export default function MasterFiltersToolbar() {
     enabled: !!query.stock,
   });
 
-  if (isLoading) return null;
-
   return (
     <div className="mt-6 flex gap-2 flex-wrap">
-      <Select
-        options={transformOptions(
-          data?.Item1 as any,
-          'MakeId',
-          'Make',
-          'MakeId',
-          true
-        )}
-        name="make"
-        label="Make"
-        value={query.make ?? ''}
-        onChange={handleSelectChange}
-      />
-      <Select
-        options={transformOptions(
-          data?.Item2 as any,
-          'TypeId',
-          'Type',
-          'TypeId',
-          true
-        )}
-        name="model"
-        label="Model"
-        value={query.model ?? ''}
-        onChange={handleSelectChange}
-      />
-      <Select
-        options={transformOptions(
-          data?.Item3 as any,
-          'VehicleTypeId',
-          'VehicleType',
-          'VehicleTypeId',
-          true
-        )}
-        name="vehicleType"
-        label="Vehicle Type"
-        value={query.vehicleType ?? ''}
-        onChange={handleSelectChange}
-      />
-      <Select
-        options={transformOptions(data?.Item4 as any, 'Year', 'Year', 'Year')}
-        name="year"
-        label="Year"
-        value={query.year ?? ''}
-        onChange={handleSelectChange}
-      />
+      {isLoading ? (
+        <SkeletonSelect />
+      ) : (
+        <Select
+          options={transformOptions(
+            data?.Item1 as any,
+            'MakeId',
+            'Make',
+            'MakeId',
+            true
+          )}
+          name="make"
+          label="Make"
+          value={query.make ?? ''}
+          onChange={handleSelectChange}
+        />
+      )}
+      {isLoading ? (
+        <SkeletonSelect />
+      ) : (
+        <Select
+          options={transformOptions(
+            data?.Item2 as any,
+            'TypeId',
+            'Type',
+            'TypeId',
+            true
+          )}
+          name="model"
+          label="Model"
+          value={query.model ?? ''}
+          onChange={handleSelectChange}
+        />
+      )}
+      {isLoading ? (
+        <SkeletonSelect />
+      ) : (
+        <Select
+          options={transformOptions(
+            data?.Item3 as any,
+            'VehicleTypeId',
+            'VehicleType',
+            'VehicleTypeId',
+            true
+          )}
+          name="vehicleType"
+          label="Vehicle Type"
+          value={query.vehicleType ?? ''}
+          onChange={handleSelectChange}
+        />
+      )}
+      {isLoading ? (
+        <SkeletonSelect />
+      ) : (
+        <Select
+          options={transformOptions(data?.Item4 as any, 'Year', 'Year', 'Year')}
+          name="year"
+          label="Year"
+          value={query.year ?? ''}
+          onChange={handleSelectChange}
+        />
+      )}
     </div>
   );
 }
