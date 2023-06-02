@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import Link from 'next/link';
+import NavItem from './NavItem';
 
 export default function SiteHeader() {
   const navItems = [
@@ -30,13 +30,7 @@ export default function SiteHeader() {
         </div>
         <div className="ml-auto flex gap-2">
           {navItems.map((navItem) => (
-            <Link
-              href={navItem.url}
-              key={navItem.label}
-              className="text-primary-900 px-2 py-1 transition hover:bg-primary-50 rounded-md whitespace-nowrap font-medium"
-            >
-              {navItem.label}
-            </Link>
+            <NavItem navItem={navItem} key={navItem.label} />
           ))}
         </div>
       </div>
