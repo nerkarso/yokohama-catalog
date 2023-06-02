@@ -4,7 +4,7 @@ import { useParams } from 'next/navigation';
 
 export default function CatalogTitle() {
   const params = useParams();
-  let slug = params?.slug || 'all';
+  let slug = params?.slug ?? 'all';
   slug = slug.charAt(0).toUpperCase() + slug.substring(1);
 
   return (

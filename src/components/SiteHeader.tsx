@@ -18,20 +18,22 @@ export default function SiteHeader() {
   ];
 
   return (
-    <header className="backdrop-blur-lg sticky top-0 border-b z-20">
+    <header className="bg-white sticky top-0 border-b shadow-sm z-20 overflow-y-auto">
       <div className="flex gap-4 px-4 h-16 items-center container">
-        <Image
-          src="http://cdn2-5e15.kxcdn.com/yoko/YokoImages/general/logo.png"
-          alt="Logo"
-          width={226}
-          height={54}
-        />
+        <div className="flex-shrink-0 h-12 w-12 md:w-52 relative">
+          <Image
+            src="http://cdn2-5e15.kxcdn.com/yoko/YokoImages/general/logo.png"
+            alt="Logo"
+            fill
+            className="object-cover object-left"
+          />
+        </div>
         <div className="ml-auto flex gap-2">
           {navItems.map((navItem) => (
             <Link
               href={navItem.url}
               key={navItem.label}
-              className="text-blue-900 px-2 py-1 transition hover:bg-primary-50 rounded-md"
+              className="text-blue-900 px-2 py-1 transition hover:bg-primary-50 rounded-md whitespace-nowrap"
             >
               {navItem.label}
             </Link>

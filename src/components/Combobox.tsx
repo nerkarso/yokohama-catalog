@@ -16,12 +16,14 @@ export default function Combobox({
   return (
     <Autocomplete
       disablePortal
+      value={value}
+      onChange={onChange}
       options={options}
-      sx={{ width: '100%', maxWidth: 240 }}
+      fullWidth
+      sx={{ maxWidth: 240 }}
       renderInput={(params) => (
         <TextField {...params} variant="filled" label={label} />
       )}
-      onChange={onChange}
     />
   );
 }

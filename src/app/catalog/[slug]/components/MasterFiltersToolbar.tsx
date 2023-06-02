@@ -1,45 +1,32 @@
 'use client';
 
-import Combobox from '@/components/Combobox';
+import Select from '@/components/Select';
+import { defaultCatalogParams } from '@/utils/defaultCatalogParam';
 import transformOptions from '@/utils/transformOptions';
+import { SelectChangeEvent } from '@mui/material';
 import { useQuery } from '@tanstack/react-query';
-import { usePathname, useRouter, useSearchParams } from 'next/navigation';
-import { useCallback } from 'react';
+import { useQueryParams } from 'use-query-params';
 import { getMasterFilters } from '../actions';
 
 export default function MasterFiltersToolbar() {
-  const router = useRouter();
-  const pathname = usePathname();
-  const searchParams = useSearchParams();
-  const stockLocationId = searchParams.get('stock');
+  const [query, setQuery] = useQueryParams(defaultCatalogParams);
+
+  const handleSelectChange = (event: SelectChangeEvent) => {
+    const { name, value } = event.target;
+    setQuery({ [name]: value === '' ? undefined : value });
+  };
 
   const { data, isLoading } = useQuery({
     queryKey: ['masterFilters'],
-    queryFn: () => getMasterFilters(stockLocationId || '1'),
-    enabled: !!stockLocationId,
+    queryFn: () => getMasterFilters(query.stock as string),
+    enabled: !!query.stock,
   });
-
-  // Get a new searchParams string by merging the current
-  // searchParams with a provided key/value pair
-  const createQueryString = useCallback(
-    (name: string, value: string) => {
-      const params = new URLSearchParams(searchParams as any);
-      params.set(name, value);
-      return params.toString();
-    },
-    [searchParams]
-  );
-
-  const handleComboboxChange = (param: string, value: any) => {
-    if (!value) return;
-    router.push(pathname + '?' + createQueryString(param, value));
-  };
 
   if (isLoading) return null;
 
   return (
-    <div className="mt-4 flex gap-2 flex-wrap">
-      <Combobox
+    <div className="mt-6 flex gap-2 flex-wrap">
+      <Select
         options={transformOptions(
           data?.Item1 as any,
           'MakeId',
@@ -47,12 +34,12 @@ export default function MasterFiltersToolbar() {
           'MakeId',
           true
         )}
+        name="make"
         label="Make"
-        onChange={(event, newValue) =>
-          handleComboboxChange('make', newValue?.id)
-        }
+        value={query.make ?? ''}
+        onChange={handleSelectChange}
       />
-      <Combobox
+      <Select
         options={transformOptions(
           data?.Item2 as any,
           'TypeId',
@@ -60,12 +47,12 @@ export default function MasterFiltersToolbar() {
           'TypeId',
           true
         )}
+        name="model"
         label="Model"
-        onChange={(event, newValue) =>
-          handleComboboxChange('model', newValue?.id)
-        }
+        value={query.model ?? ''}
+        onChange={handleSelectChange}
       />
-      <Combobox
+      <Select
         options={transformOptions(
           data?.Item3 as any,
           'VehicleTypeId',
@@ -73,17 +60,17 @@ export default function MasterFiltersToolbar() {
           'VehicleTypeId',
           true
         )}
+        name="vehicleType"
         label="Vehicle Type"
-        onChange={(event, newValue) =>
-          handleComboboxChange('vehicleType', newValue?.id)
-        }
+        value={query.vehicleType ?? ''}
+        onChange={handleSelectChange}
       />
-      <Combobox
+      <Select
         options={transformOptions(data?.Item4 as any, 'Year', 'Year', 'Year')}
+        name="year"
         label="Year"
-        onChange={(event, newValue) =>
-          handleComboboxChange('year', newValue?.id)
-        }
+        value={query.year ?? ''}
+        onChange={handleSelectChange}
       />
     </div>
   );

@@ -15,6 +15,6 @@ export default function transformOptions(
     : uniqueList;
   return sortedList.map((item) => ({
     label: item[optionLabelKey].toUpperCase(),
-    id: item[optionIdKey],
+    value: item[optionIdKey],
   }));
 }

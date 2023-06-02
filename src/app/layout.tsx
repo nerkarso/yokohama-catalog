@@ -1,6 +1,6 @@
-import RootProviders from '@/components/RootProviders';
 import './globals.css';
 
+import RootProviders from '@/components/RootProviders';
 import SiteHeader from '@/components/SiteHeader';
 import { Inter } from 'next/font/google';
 
