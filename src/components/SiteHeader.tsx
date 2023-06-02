@@ -18,7 +18,7 @@ export default function SiteHeader() {
   ];
 
   return (
-    <header className="bg-white sticky top-0 border-b shadow-sm z-20 overflow-y-auto">
+    <header className="bg-white sticky top-0 border-b z-20 overflow-y-auto">
       <div className="flex gap-4 px-4 h-16 items-center container">
         <div className="flex-shrink-0 h-12 w-12 md:w-52 relative">
           <Image

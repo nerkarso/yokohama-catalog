@@ -1,5 +1,6 @@
 'use client';
 
+import MainHeading from '@/components/MainHeading';
 import { useParams } from 'next/navigation';
 
 export default function CatalogTitle() {
@@ -7,7 +8,5 @@ export default function CatalogTitle() {
   let slug = params?.slug ?? 'all';
   slug = slug.charAt(0).toUpperCase() + slug.substring(1);
 
-  return (
-    <h1 className="text-4xl font-semibold text-primary-900">{slug} Stock</h1>
-  );
+  return <MainHeading>{slug} Stock</MainHeading>;
 }

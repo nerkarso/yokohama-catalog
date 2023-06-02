@@ -56,4 +56,32 @@ declare global {
     Search_String: null;
     SearchTypeId: number;
   }
+
+  interface VehicleDetails {
+    VehicleId: number;
+    Year: string;
+    Mileage: string;
+    Color: string;
+    Fuel: string;
+    Seats: string;
+    Doors: string;
+    Steering: string;
+    Transmission: string;
+    Chassis: string;
+    EngineCapacity: number;
+    WheeleDrive: string;
+    Status: string;
+    ArrivalDate: string;
+    Location: string;
+    SalePrice: number;
+    PromoPrice: number;
+    Make: string;
+    ReservationStatus: string;
+    OriginalSalePrice: number;
+    WebPromoDiscount: number;
+    WebSailingDiscount: number;
+    WheelChair: string;
+    ShowOnline: boolean;
+    ShowPromoPriceOnline: boolean;
+  }
 }
