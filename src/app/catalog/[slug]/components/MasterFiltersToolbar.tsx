@@ -15,7 +15,14 @@ export default function MasterFiltersToolbar() {
 
   const handleSelectChange = (event: SelectChangeEvent) => {
     const { name, value } = event.target;
-    setQuery({ [name]: value === '' ? undefined : value, page: '1' });
+    const otherOptions: any = {
+      page: '1',
+    };
+    if (name === 'make') {
+      otherOptions['model'] = undefined;
+      otherOptions['year'] = undefined;
+    }
+    setQuery({ [name]: value === '' ? undefined : value, ...otherOptions });
   };
 
   const clearFilters = () => {
