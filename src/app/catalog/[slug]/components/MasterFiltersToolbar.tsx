@@ -34,6 +34,7 @@ export default function MasterFiltersToolbar() {
         <SkeletonSelect />
       ) : (
         <Select
+          hasNoneItem
           options={transformOptions(
             data?.Item1 as any,
             'MakeId',
@@ -51,6 +52,7 @@ export default function MasterFiltersToolbar() {
         <SkeletonSelect />
       ) : (
         <Select
+          hasNoneItem
           options={transformOptions(
             data?.Item2 as any,
             'TypeId',
@@ -69,6 +71,7 @@ export default function MasterFiltersToolbar() {
         <SkeletonSelect />
       ) : (
         <Select
+          hasNoneItem
           options={transformOptions(
             data?.Item4 as any,
             'Year',
@@ -86,17 +89,30 @@ export default function MasterFiltersToolbar() {
       {isLoading ? (
         <SkeletonSelect />
       ) : (
+        // <Select
+        //   options={transformOptions(
+        //     data?.Item3 as any,
+        //     'VehicleTypeId',
+        //     'VehicleType',
+        //     'VehicleTypeId',
+        //     true
+        //   )}
+        //   name="vehicleType"
+        //   label="Vehicle Type"
+        //   value={query.vehicleType ?? ''}
+        //   onChange={handleSelectChange}
+        // />
         <Select
-          options={transformOptions(
-            data?.Item3 as any,
-            'VehicleTypeId',
-            'VehicleType',
-            'VehicleTypeId',
-            true
-          )}
-          name="vehicleType"
-          label="Vehicle Type"
-          value={query.vehicleType ?? ''}
+          options={[
+            { value: '0-2147483647', label: 'All' },
+            { value: '0-25000', label: '0 km - 25000 km' },
+            { value: '25001-50000', label: '25001 km - 50000 km' },
+            { value: '50001-100000', label: '50001 km - 100000 km' },
+            { value: '100001-1000000000', label: 'More than 100000' },
+          ]}
+          name="mileage"
+          label="Mileage"
+          value={query.mileage ?? ''}
           onChange={handleSelectChange}
         />
       )}

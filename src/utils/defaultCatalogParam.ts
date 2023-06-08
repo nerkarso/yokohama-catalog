@@ -6,4 +6,5 @@ export const defaultCatalogParams = {
   model: StringParam,
   vehicleType: StringParam,
   year: StringParam,
+  mileage: StringParam,
 };

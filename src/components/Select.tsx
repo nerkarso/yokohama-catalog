@@ -11,20 +11,24 @@ export default function Select({
   value,
   onChange,
   options,
+  hasNoneItem,
 }: {
   name: string;
   label: string;
   value: any;
   onChange: (event: SelectChangeEvent) => void;
   options: Array<{ label: string; value: any }>;
+  hasNoneItem?: boolean;
 }) {
   return (
     <FormControl variant="filled" fullWidth>
       <InputLabel id={name}>{label}</InputLabel>
       <MSelect id={name} name={name} value={value} onChange={onChange}>
-        <MenuItem value="">
-          <em>None</em>
-        </MenuItem>
+        {hasNoneItem && (
+          <MenuItem value="">
+            <em>None</em>
+          </MenuItem>
+        )}
         {options.map((option) => (
           <MenuItem value={option.value} key={option.value}>
             {option.label}

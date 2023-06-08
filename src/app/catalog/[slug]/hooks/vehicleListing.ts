@@ -13,7 +13,7 @@ export function useVehicleListing(
     queryFn: () =>
       getFilterResults({
         CarId: '0',
-        Range: '111-10000000',
+        Range: query.mileage ?? '0-2147483647',
         TypeId: query.vehicleType ?? '0',
         CarStatus: query.stock ?? '0',
         Make: query.make ?? '0',
