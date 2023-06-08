@@ -10,6 +10,9 @@ export default function VehicleCard({ data }: { data: FilterResult }) {
   const imageUrl = `${IMAGE_BASE_URL}/${data.VehicleId}/Front-${data.VehicleId}-Thumb.jpg`;
 
   const renderChips = () => {
+    if (data.ReservationID === 1) {
+      return <Chip label="Reserved" color="success" />;
+    }
     if (data.ReservationID === 2) {
       return <Chip label="Sold" color="secondary" />;
     }
