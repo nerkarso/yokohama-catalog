@@ -1,5 +1,6 @@
 'use client';
 
+import { Skeleton } from '@mui/material';
 import Alert from '@mui/material/Alert';
 import { useSearchParams } from 'next/navigation';
 import { useEffect } from 'react';
@@ -19,5 +20,21 @@ export default function VehiclesContainer() {
     return <Alert severity="info">No results found</Alert>;
   }
 
-  return <VehiclesGrid data={data} isLoading={isLoading} />;
+  return (
+    <>
+      <div className="mb-8 -mt-4">
+        {isLoading ? (
+          <Skeleton
+            animation="wave"
+            variant="rounded"
+            width={200}
+            height={24}
+          />
+        ) : (
+          <p className="text-base-500">Showing {data?.length ?? 0} results</p>
+        )}
+      </div>
+      <VehiclesGrid data={data} isLoading={isLoading} />
+    </>
+  );
 }
