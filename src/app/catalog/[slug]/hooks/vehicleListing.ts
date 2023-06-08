@@ -19,7 +19,7 @@ export function useVehicleListing(
         Make: query.make ?? '0',
         Brand: query.model ?? '0',
         Year: query.year ?? '0',
-        PageNo: '1',
+        PageNo: query.page ?? '1',
         PriceRange: 'undefined',
       }),
     ...queryOptions,
