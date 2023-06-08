@@ -16,10 +16,12 @@ export const metadata = {
 export default function RootLayout({ children }: Props) {
   return (
     <html lang="en">
-      <body className={clsx('min-h-screen', fontFamily.className)}>
+      <body
+        className={clsx('flex flex-col min-h-screen', fontFamily.className)}
+      >
         <RootProviders>
           <SiteHeader />
-          <main>{children}</main>
+          <main className="flex-grow">{children}</main>
         </RootProviders>
       </body>
     </html>

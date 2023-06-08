@@ -1,24 +1,10 @@
+import { navItems } from '@/config/nav';
 import Image from 'next/image';
 import NavItem from './NavItem';
 
 export default function SiteHeader() {
-  const navItems = [
-    {
-      label: 'Japan Stock',
-      url: '/catalog/japan?stock=1',
-    },
-    {
-      label: 'Sailing Stock',
-      url: '/catalog/sailing?stock=2',
-    },
-    {
-      label: 'Suriname Stock',
-      url: '/catalog/suriname?stock=3',
-    },
-  ];
-
   return (
-    <header className="bg-white sticky top-0 border-b z-20 overflow-y-auto">
+    <header className="bg-white sticky top-0 border-b z-20 overflow-y-auto flex-shrink-0">
       <div className="flex gap-4 px-4 h-16 items-center container">
         <div className="flex-shrink-0 h-12 w-12 md:w-52 relative">
           <Image
