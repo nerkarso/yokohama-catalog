@@ -20,6 +20,8 @@ export default function VehicleSpecs({ details }: { details: VehicleDetails }) {
 
 const vehicleSpecLabels = {
   VehicleId: 'Auto Id',
+  ArrivalDate: 'Arrival Date',
+  Location: 'Location',
   Year: 'Year',
   Mileage: 'Mileage (x 1000 km)',
   Color: 'Color',

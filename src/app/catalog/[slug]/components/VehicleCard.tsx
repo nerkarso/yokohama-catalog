@@ -1,6 +1,7 @@
 'use client';
 
 import Image from '@/components/Image';
+import prettyPrice from '@/utils/prettyPrice';
 import Chip from '@mui/material/Chip';
 import Link from 'next/link';
 
@@ -46,7 +47,7 @@ export default function VehicleCard({ data }: { data: FilterResult }) {
         )}
         {data.OriginalSalePrice && (
           <p className="text-primary-800 font-semibold text-xs sm:text-sm mt-auto">
-            {data.OriginalSalePrice.replace('$0.00', 'Price unavailable')}
+            {prettyPrice(data.OriginalSalePrice)}
           </p>
         )}
       </div>
