@@ -1,7 +1,7 @@
 'use client';
 
+import Image from '@/components/Image';
 import Chip from '@mui/material/Chip';
-import Image from 'next/image';
 import Link from 'next/link';
 
 const IMAGE_BASE_URL = `${process.env.NEXT_PUBLIC_CDN_BASE_URL}/YokoImages/Suriname/VehicleImages`;
