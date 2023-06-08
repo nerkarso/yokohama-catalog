@@ -6,10 +6,12 @@ export default function transformOptions(
   uniqueKey: string,
   optionLabelKey: string,
   optionIdKey: string,
-  isSorted?: boolean
+  isSorted?: boolean,
+  filter?: (item: any) => any
 ) {
   if (!items) return [];
-  const uniqueList: any[] = getUniqueListBy(items, uniqueKey);
+  const filtered = filter ? items.filter(filter) : items;
+  const uniqueList: any[] = getUniqueListBy(filtered, uniqueKey);
   const sortedList = isSorted
     ? _.sortBy(uniqueList, optionLabelKey)
     : uniqueList;

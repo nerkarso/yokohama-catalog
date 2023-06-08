@@ -56,11 +56,30 @@ export default function MasterFiltersToolbar() {
             'TypeId',
             'Type',
             'TypeId',
-            true
+            true,
+            (item) => item.MakeId == query.make
           )}
           name="model"
           label="Model"
           value={query.model ?? ''}
+          onChange={handleSelectChange}
+        />
+      )}
+      {isLoading ? (
+        <SkeletonSelect />
+      ) : (
+        <Select
+          options={transformOptions(
+            data?.Item4 as any,
+            'Year',
+            'Year',
+            'Year',
+            false,
+            (item) => item.MakeId == query.make && item.TypeId == query.model
+          )}
+          name="year"
+          label="Year"
+          value={query.year ?? ''}
           onChange={handleSelectChange}
         />
       )}
@@ -78,17 +97,6 @@ export default function MasterFiltersToolbar() {
           name="vehicleType"
           label="Vehicle Type"
           value={query.vehicleType ?? ''}
-          onChange={handleSelectChange}
-        />
-      )}
-      {isLoading ? (
-        <SkeletonSelect />
-      ) : (
-        <Select
-          options={transformOptions(data?.Item4 as any, 'Year', 'Year', 'Year')}
-          name="year"
-          label="Year"
-          value={query.year ?? ''}
           onChange={handleSelectChange}
         />
       )}
