@@ -1,3 +1,5 @@
+import prettyText from '@/utils/prettyText';
+
 export default function VehicleSpecs({ details }: { details: VehicleDetails }) {
   return (
     <div className="space-y-2 p-6 rounded-xl border">
@@ -8,7 +10,7 @@ export default function VehicleSpecs({ details }: { details: VehicleDetails }) {
         return (
           <div className="flex gap-2 justify-between" key={key}>
             <p className="text-base-500">{label}</p>
-            <p>{value}</p>
+            <p>{prettyText(value)}</p>
           </div>
         );
       })}
