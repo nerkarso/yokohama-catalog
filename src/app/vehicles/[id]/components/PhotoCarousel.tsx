@@ -19,7 +19,10 @@ export default function PhotoCarousel({ vehicleId }: { vehicleId: string }) {
   ];
 
   return (
-    <div className="rounded-xl overflow-hidden bg-base-100" ref={emblaRef}>
+    <div
+      className="rounded-xl overflow-hidden bg-base-100 dark:bg-base-900"
+      ref={emblaRef}
+    >
       <div className="flex">
         {slides.map((slide, i) => (
           <div

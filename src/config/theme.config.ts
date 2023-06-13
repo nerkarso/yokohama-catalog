@@ -1,7 +1,6 @@
-import { createTheme } from '@mui/material/styles';
 import siteConfig from './site.config.mjs';
 
-const themeConfig = createTheme({
+const themeConfig = {
   typography: {
     fontFamily: 'inherit',
   },
@@ -16,6 +15,6 @@ const themeConfig = createTheme({
       main: siteConfig.colors.primary[800],
     },
   },
-});
+};
 
 export default themeConfig;

@@ -6,7 +6,7 @@ export default function Page() {
   return (
     <div className="px-4 py-8 md:py-12 container flex items-center">
       <div className="flex-1 space-y-4 md:space-y-8">
-        <h1 className="text-3xl font-bold text-primary-900 leading-snug">
+        <h1 className="text-3xl font-bold text-primary-900 dark:text-primary-600 leading-snug">
           Choose your stock location
         </h1>
         <div className="md:hidden max-w-xs">

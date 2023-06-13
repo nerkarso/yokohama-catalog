@@ -17,7 +17,10 @@ export default function RootLayout({ children }: Props) {
   return (
     <html lang="en">
       <body
-        className={clsx('flex flex-col min-h-screen', fontFamily.className)}
+        className={clsx(
+          'dark:bg-black dark:text-white flex flex-col min-h-screen',
+          fontFamily.className
+        )}
       >
         <RootProviders>
           <SiteHeader />

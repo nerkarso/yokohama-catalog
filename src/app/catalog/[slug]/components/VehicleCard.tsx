@@ -23,7 +23,7 @@ export default function VehicleCard({ data }: { data: FilterResult }) {
   return (
     <Link
       href={`/vehicles/${data.VehicleId}`}
-      className="overflow-hidden rounded-lg bg-base-100 hover:bg-base-200 transition flex flex-col"
+      className="overflow-hidden rounded-lg bg-base-100 dark:bg-base-900 dark:hover:bg-base-800 hover:bg-base-200 transition flex flex-col"
     >
       <div className="relative">
         <div className="aspect-video relative">
@@ -46,7 +46,7 @@ export default function VehicleCard({ data }: { data: FilterResult }) {
           </h4>
         )}
         {data.OriginalSalePrice && (
-          <p className="text-primary-800 font-semibold text-xs sm:text-sm mt-auto">
+          <p className="text-primary-800 dark:text-primary-600 font-semibold text-xs sm:text-sm mt-auto">
             {prettyPrice(data.OriginalSalePrice)}
           </p>
         )}
