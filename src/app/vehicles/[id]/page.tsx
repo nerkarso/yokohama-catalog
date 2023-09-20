@@ -12,11 +12,7 @@ export default async function Page({ params }: { params: { id: string } }) {
     <>
       <header>
         <MainHeading>{vehicleDetails.Make}</MainHeading>
-        {vehicleDetails.OriginalSalePrice && (
-          <h5 className="mt-1 text-xl font-medium text-secondary-700">
-            {prettyPrice(vehicleDetails.OriginalSalePrice)}
-          </h5>
-        )}
+        <h5 className="mt-1 text-xl font-medium text-secondary-700">{prettyPrice(vehicleDetails.OriginalSalePrice)}</h5>
       </header>
       <div className="flex mt-4 flex-col gap-y-6 gap-x-8 lg:flex-row">
         <div className="flex-1">

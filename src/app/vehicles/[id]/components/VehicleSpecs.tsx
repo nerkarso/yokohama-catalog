@@ -2,7 +2,7 @@ import prettyText from '@/utils/prettyText';
 
 export default function VehicleSpecs({ details }: { details: VehicleDetails }) {
   return (
-    <div className="space-y-2 p-6 rounded-xl border dark:border-base-800">
+    <div className="space-y-2 p-6 rounded-xl border bg-base-50 dark:bg-base-900 dark:border-base-800">
       {Object.entries(vehicleSpecLabels).map(([key, label]) => {
         // @ts-ignore
         const value = details[key];
