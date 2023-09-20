@@ -1,3 +1,5 @@
+import SkeletonVehicleDetails from './components/SkeletonVehicleDetails';
+
 export default function Loading() {
-  return <div>Loading...</div>;
+  return <SkeletonVehicleDetails />;
 }
