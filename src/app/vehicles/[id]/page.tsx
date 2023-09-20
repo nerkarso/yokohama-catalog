@@ -18,7 +18,7 @@ export default async function Page({ params }: { params: { id: string } }) {
         <div className="flex-1">
           <PhotoCarousel vehicleId={String(vehicleDetails.VehicleId)} />
         </div>
-        <div className="lg:max-w-sm flex-1">
+        <div className="lg:max-w-sm xl:max-w-md flex-1">
           <VehicleSpecs details={vehicleDetails} />
         </div>
       </div>
