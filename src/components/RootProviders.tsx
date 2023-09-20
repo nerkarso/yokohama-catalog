@@ -6,7 +6,7 @@ import { useMediaQuery } from '@mui/material';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
-import _ from 'lodash';
+import _merge from 'lodash/merge';
 import { useEffect, useMemo, useState } from 'react';
 
 export default function RootProviders({ children }: Props) {
@@ -19,9 +19,7 @@ export default function RootProviders({ children }: Props) {
   });
 
   const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)');
-  const [mode, setMode] = useState<'light' | 'dark'>(
-    prefersDarkMode ? 'dark' : 'light'
-  );
+  const [mode, setMode] = useState<'light' | 'dark'>(prefersDarkMode ? 'dark' : 'light');
   useEffect(() => {
     setMode(prefersDarkMode ? 'dark' : 'light');
   }, [prefersDarkMode]);
@@ -37,7 +35,7 @@ export default function RootProviders({ children }: Props) {
   const theme = useMemo(
     () =>
       createTheme(
-        _.merge(themeConfig, {
+        _merge(themeConfig, {
           palette: { mode },
         })
       ),

@@ -1,4 +1,4 @@
-import _ from 'lodash';
+import _sortBy from 'lodash/sortBy';
 import getUniqueListBy from './getUniqueListBy';
 
 export default function transformOptions(
@@ -12,9 +12,7 @@ export default function transformOptions(
   if (!items) return [];
   const filtered = filter ? items.filter(filter) : items;
   const uniqueList: any[] = getUniqueListBy(filtered, uniqueKey);
-  const sortedList = isSorted
-    ? _.sortBy(uniqueList, optionLabelKey)
-    : uniqueList;
+  const sortedList = isSorted ? _sortBy(uniqueList, optionLabelKey) : uniqueList;
   return sortedList.map((item) => ({
     label: item[optionLabelKey].toUpperCase(),
     value: item[optionIdKey],

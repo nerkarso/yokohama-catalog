@@ -3,9 +3,7 @@ import { UseQueryOptions, useQuery } from '@tanstack/react-query';
 import { useQueryParams } from 'use-query-params';
 import { getFilterResults } from '../actions';
 
-export function useVehicleListing(
-  queryOptions?: Pick<UseQueryOptions, 'enabled'>
-) {
+export function useVehicleListing(queryOptions?: Pick<UseQueryOptions, 'enabled'>) {
   const [query] = useQueryParams(defaultCatalogParams);
 
   return useQuery({
@@ -19,7 +17,7 @@ export function useVehicleListing(
         Make: query.make ?? '0',
         Brand: query.model ?? '0',
         Year: query.year ?? '0',
-        PageNo: query.page ?? '1',
+        PageNo: '0', // Get all items
         PriceRange: 'undefined',
       }),
     ...queryOptions,
