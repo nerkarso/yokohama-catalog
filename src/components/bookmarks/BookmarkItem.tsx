@@ -21,7 +21,7 @@ export default function BookmarkItem({ item }: { item: { id: number; url: string
       }
     >
       <ListItemButton component={Link} href={item.url}>
-        <ListItemText primary={item.title} secondary={<p className="truncate">{item.url}</p>} />
+        <ListItemText primary={item.title} secondary={<span className="block truncate">{item.url}</span>} />
       </ListItemButton>
     </ListItem>
   );
