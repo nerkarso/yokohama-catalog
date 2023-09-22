@@ -11,7 +11,7 @@ export default function Bookmarks() {
 
   if (!bookmarks.items?.length) {
     return (
-      <Alert severity="info" icon={<BookmarkIcon />}>
+      <Alert severity="info" icon={<BookmarkIcon />} variant="filled">
         <AlertTitle>No bookmarks</AlertTitle>
         Start adding your bookmarks
       </Alert>

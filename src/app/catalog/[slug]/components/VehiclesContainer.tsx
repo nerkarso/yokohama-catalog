@@ -18,7 +18,11 @@ export default function VehiclesContainer() {
   }, [searchParams]);
 
   if (!isLoading && !data?.length) {
-    return <Alert severity="info">No results found</Alert>;
+    return (
+      <Alert severity="info" variant="filled">
+        No results found
+      </Alert>
+    );
   }
 
   return (
