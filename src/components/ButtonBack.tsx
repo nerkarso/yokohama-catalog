@@ -1,6 +1,6 @@
 'use client';
 
-import ArrowBackIcon from '@mui/icons-material/ArrowBack';
+import ArrowBackIcon from '@mui/icons-material/ArrowBackTwoTone';
 import IconButton from '@mui/material/IconButton';
 import { useRouter } from 'next/navigation';
 

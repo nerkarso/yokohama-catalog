@@ -2,8 +2,8 @@
 
 import { useForm } from '@mantine/form';
 import { useDisclosure } from '@mantine/hooks';
-import BookmarkAddTwoTone from '@mui/icons-material/BookmarkAddTwoTone';
-import CloseTwoTone from '@mui/icons-material/CloseTwoTone';
+import BookmarkAddIcon from '@mui/icons-material/BookmarkAddTwoTone';
+import CloseIcon from '@mui/icons-material/CloseTwoTone';
 import {
   Button,
   Dialog,
@@ -49,7 +49,7 @@ export default function BookmarkButton() {
   return (
     <>
       <IconButton color="primary" onClick={dialogHandlers.open}>
-        <BookmarkAddTwoTone />
+        <BookmarkAddIcon />
       </IconButton>
       <Dialog open={dialogOpened} onClose={dialogHandlers.close} TransitionComponent={Grow} transitionDuration={250}>
         <form onSubmit={handleSubmit}>
@@ -86,7 +86,7 @@ export default function BookmarkButton() {
         TransitionComponent={Slide}
         action={
           <IconButton size="small" color="inherit" onClick={snackbarHandlers.close}>
-            <CloseTwoTone fontSize="small" />
+            <CloseIcon fontSize="small" />
           </IconButton>
         }
       />

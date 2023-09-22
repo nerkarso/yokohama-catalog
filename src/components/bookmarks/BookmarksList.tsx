@@ -1,6 +1,6 @@
 'use client';
 
-import BookmarkTwoTone from '@mui/icons-material/BookmarkTwoTone';
+import BookmarkIcon from '@mui/icons-material/BookmarkTwoTone';
 import { Alert, AlertTitle } from '@mui/material';
 import List from '@mui/material/List';
 import BookmarkItem from './BookmarkItem';
@@ -11,7 +11,7 @@ export default function Bookmarks() {
 
   if (!bookmarks.items?.length) {
     return (
-      <Alert severity="info" icon={<BookmarkTwoTone />}>
+      <Alert severity="info" icon={<BookmarkIcon />}>
         <AlertTitle>No bookmarks</AlertTitle>
         Start adding your bookmarks
       </Alert>

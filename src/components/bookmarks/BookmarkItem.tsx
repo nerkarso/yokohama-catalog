@@ -1,10 +1,11 @@
 'use client';
 
-import DeleteTwoTone from '@mui/icons-material/DeleteTwoTone';
+import DeleteIcon from '@mui/icons-material/DeleteTwoTone';
 import { IconButton } from '@mui/material';
 import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemText from '@mui/material/ListItemText';
+import Link from 'next/link';
 import { useBookmarks } from './useBookmarks';
 
 export default function BookmarkItem({ item }: { item: { id: number; url: string; title: string } }) {
@@ -15,11 +16,11 @@ export default function BookmarkItem({ item }: { item: { id: number; url: string
       disablePadding
       secondaryAction={
         <IconButton edge="end" onClick={() => bookmarks.remove(item.id)}>
-          <DeleteTwoTone />
+          <DeleteIcon />
         </IconButton>
       }
     >
-      <ListItemButton component="a" href={item.url}>
+      <ListItemButton component={Link} href={item.url}>
         <ListItemText primary={item.title} secondary={<p className="truncate">{item.url}</p>} />
       </ListItemButton>
     </ListItem>

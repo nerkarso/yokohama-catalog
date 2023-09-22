@@ -1,8 +1,8 @@
 'use client';
 
 import Image from '@/components/Image';
-import ChevronLeftTwoTone from '@mui/icons-material/ChevronLeftTwoTone';
-import ChevronRightTwoTone from '@mui/icons-material/ChevronRightTwoTone';
+import ChevronLeftIcon from '@mui/icons-material/ChevronLeftTwoTone';
+import ChevronRightIcon from '@mui/icons-material/ChevronRightTwoTone';
 import clsx from 'clsx';
 import useEmblaCarousel from 'embla-carousel-react';
 import { useCallback, useEffect, useState } from 'react';
@@ -100,11 +100,11 @@ const ControlButton: React.FC<{ direction: 'left' | 'right'; [key: string]: unkn
   const directionConfig = {
     left: {
       className: '-left-3',
-      icon: ChevronLeftTwoTone,
+      icon: ChevronLeftIcon,
     },
     right: {
       className: '-right-3',
-      icon: ChevronRightTwoTone,
+      icon: ChevronRightIcon,
     },
   }[direction];
 
