@@ -47,7 +47,7 @@ export default function RootProviders({ children }: Props) {
       <ColorModeContext.Provider value={colorMode}>
         <ThemeProvider theme={theme}>{children}</ThemeProvider>
       </ColorModeContext.Provider>
-      <ReactQueryDevtools />
+      <ReactQueryDevtools position="bottom-right" />
     </QueryClientProvider>
   );
 }
