@@ -1,6 +1,7 @@
 'use client';
 
 import Select from '@/components/Select';
+import BookmarkButton from '@/components/bookmarks/BookmarkButton';
 import { defaultCatalogParams } from '@/utils/defaultCatalogParam';
 import transformOptions from '@/utils/transformOptions';
 import Button from '@mui/material/Button';
@@ -42,13 +43,7 @@ export default function MasterFiltersToolbar() {
       ) : (
         <Select
           hasNoneItem
-          options={transformOptions(
-            data?.Item1 as any,
-            'MakeId',
-            'Make',
-            'MakeId',
-            true
-          )}
+          options={transformOptions(data?.Item1 as any, 'MakeId', 'Make', 'MakeId', true)}
           name="make"
           label="Make"
           value={query.make ?? ''}
@@ -126,10 +121,11 @@ export default function MasterFiltersToolbar() {
       {isLoading ? (
         <SkeletonSelect />
       ) : (
-        <div className="flex md:justify-end items-center">
+        <div className="col-span-2 xs:col-span-1 flex justify-between items-center pt-2 sm:pt-0 xs:pl-2">
           <Button onClick={clearFilters} variant="outlined">
             Clear
           </Button>
+          <BookmarkButton />
         </div>
       )}
     </div>
