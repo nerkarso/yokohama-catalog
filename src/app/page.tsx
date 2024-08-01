@@ -22,9 +22,9 @@ export default function Page() {
 
 function Illustration() {
   return (
-    <div className="aspect-[4/3] relative">
+    <div className="aspect-[1/1] relative">
       <Image
-        src="https://minimals.cc/assets/illustrations/illustration_dashboard.png"
+        src="/car.png"
         fill
         className="object-center"
         alt=""
